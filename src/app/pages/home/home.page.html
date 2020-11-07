@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="contatosDb.length > 0 else estadoVazio">
+    <ion-card *ngFor="let contato of contatosDb">
+      <ion-card-header>
+        <ion-card-title
+          >{{ contato.nome }}
+          <span class="empresa">({{ contato.empresa }})</span></ion-card-title
+        >
+        <ion-button size="small" routerLink="/editar/{{ contato._id }}"
+          >Editar</ion-button
+        >
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>{{ contato.telefone }} | {{ contato.rua }} | {{ contato.uf }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ng-template #estadoVazio><h2>Você ainda não tem contatos.</h2> </ng-template>
+</ion-content>

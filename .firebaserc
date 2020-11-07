@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "crud-ionic-firebase-a7eb9": {
+      "hosting": {
+        "app": [
+          "crud-ionic-firebase-a7eb9"
+        ]
+      }
+    }
+  }
+}
